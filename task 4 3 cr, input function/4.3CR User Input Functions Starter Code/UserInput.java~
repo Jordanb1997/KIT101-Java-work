@@ -1,0 +1,110 @@
+import java.util.Scanner;
+
+/**
+ * 4.3CR User Input Functions
+ * 
+ * @Jordan Bannister
+ */
+public class UserInput {
+    
+    
+    public static int promptForInt(Scanner in, String prompt, int min, int max){
+        int value; //user entered value
+        
+        //collect input
+        System.out.print(prompt + (min-max) + ": " );
+        value = in.nextInt();
+        
+        //determine valid input
+        while(value < min || value > max){
+            System.out.println("Invalid value");
+            System.out.print(prompt + (min-max) + ": " );
+            value = in.nextInt();
+        }
+        //return what is in value
+        return value;
+    }
+    
+    
+    public static double promptForDouble(Scanner in, String prompt, double min, double max){
+        double value; //user entered value
+        
+        //collect input
+        System.out.print(prompt + (min-max) + ": " );
+        value = in.nextDouble();
+        
+        //determine valid input
+        while(value < min || value > max){
+            System.out.println("Invalid value");
+            System.out.print(prompt + (min-max) + ": " );
+            value = in.nextDouble();
+        }
+        //return what is in value
+        return value;
+    }
+    
+    
+    public static boolean promptForYesNo(Scanner in, String prompt){
+        boolean valid = true; //hold validity of input
+        boolean validInput; //
+        String value; //hold the input
+        
+        // collect yes/no
+        System.out.print(prompt + "(yes/no or y/n): " );
+        value = in.next();
+        value.toLowerCase();
+        
+        //checking user input
+        if(value == "y" || value == "yes" || value == "true"){
+            valid = true;
+        }
+        if(value == "n" || value == "no" || value == "false"){
+            valid = false;
+        }
+        else{
+            System.out.println("Invalid value");
+            System.out.print(prompt + "(yes/no or y/n): " );
+            value = in.next();
+            //value.toLowerCase();
+        }
+      return  valid;  
+    }
+    
+    public static void main(String[] args) { 
+        Scanner sc = new Scanner(System.in);
+        //All values are initialised so code will compile and run
+        int guess = -1;        //user's guess (between 1 and 10)
+        double percent = -1;   //a percentage (as a value between 0 and 1)
+        boolean again = false; //do they want to go again?
+        
+        System.out.println("Testing prompt for int... the number should be saved in guess.");
+        System.out.println(" - Enter '600' -- should loop with error");
+        System.out.println(" - Enter '-6' -- should loop with error");
+        System.out.println(" - Enter '6' and it should work");
+        //guess = promptForInt(sc, "Enter a number", 1, 10);
+        System.out.println("Guess: " + guess);
+        System.out.println();
+        
+        System.out.println("Testing prompt for double... the number should be saved in percent.");
+        System.out.println(" - Enter '600' -- should loop with error");
+        System.out.println(" - Enter '-1' -- should loop with error");
+        System.out.println(" - Enter '0.5' and it should work");
+        //percent = promptForDouble(sc, "Enter percent value", 0.0, 1.0);
+        System.out.println("Percent: " + percent);
+        System.out.println();
+        
+        System.out.println("Testing prompt for yes/no... the result is saved in again.");
+        System.out.println(" - Extend these boolean tests... add messages and verify your solution!");
+        System.out.println(" - Enter 'yes' and it should succeed");
+        again = promptForYesNo(sc, "Play again?");
+        System.out.println("Again: " + again);
+        System.out.println();
+        System.out.println(" - Verify that it can also read in false...");
+        again = promptForYesNo(sc, "Play again?");
+        System.out.println("Again: " + again);
+        System.out.println();
+        
+        System.out.println("Tests complete...");        
+    }
+    
+}

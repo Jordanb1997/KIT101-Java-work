@@ -1,0 +1,46 @@
+public class gameScore {
+    //variable declarations
+    private String username; //users username
+    private int gameid; //users game instance id
+    private int score; //users score
+    
+    //a constructor
+    public gameScore(String username, int gameid, int score){
+        username = username;
+        gameid = gameid;
+        score = score;
+    }
+    //getters and setters
+    public String getUsername(){
+        return username;
+    }
+    public int getGameid(){
+        return gameid;
+    }
+    public int getScore(){
+        return score;
+    }
+    public void setUsername(String u){
+        username = u;
+    }
+    public void setGameid(int g){
+        gameid = g;
+    }
+    public void setScore(int s){
+        score = s;        
+    }
+    
+    public String toString() {
+        //creates and returns a String
+        String title = "";
+        
+        if(score < 1000){
+            title = "Newb";
+        }
+        if(score >100000){
+            title = "Godlike";
+        }
+        return username/* + ":" + score+ "(" + gameid + ")" + "\n" + title*/;
+    }
+    
+}

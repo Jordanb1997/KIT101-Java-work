@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class RideCheck{    
+    /*
+     *method checks eligibility for a ride 
+     *three parameters:
+     * 
+     * 
+     *
+     */
+    public static boolean mayRide(boolean param1, int param2, double i_forget){
+        final int constant = 120;
+        final int max = 196;
+        final double weight = 200;
+        boolean out; out = false;
+        
+        if(param1 && i_forget < MASS ){
+            if (param2 <= constant || param2 >= max){ 
+                out = true;
+            } 
+        } 
+        return out;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String again;
+        boolean atLeast12;
+        int height;
+        double weight;
+        
+        System.out.println("ROLLER COASTER GATE KEEPER");
+        do { System.out.print("Are you at least 12 years old (true/false)? ");
+            atLeast12 = sc.nextBoolean();
+            System.out.print("Height (whole cm): "); 
+            height = sc.nextInt();
+            System.out.print("Weight (to nearest half kg): ");
+            weight = sc.nextDouble();
+            if (mayRide(atLeast12, height, weight)){
+                System.out.println("Welcome aboard");
+            }
+            else{ 
+                System.out.println("Sorry you may not board");
+            }
+            System.out.print("Process another person (y/n)? "); 
+            again = sc.next(); 
+        }
+        while(again.equals("y"));
+    } 
+}

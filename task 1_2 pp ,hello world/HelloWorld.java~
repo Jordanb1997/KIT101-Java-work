@@ -1,0 +1,20 @@
+/*
+ * kit101 1.2pp Hello World
+ * @author JOrdan Bannister
+ */
+public class HelloWorld{
+    public static void main(String[] args){
+        int a, b, c, d, e;
+        a = 10;
+        b = 20;
+        c = 30;
+        d = b;
+        e = 50;
+        b = c;
+        a = b - a;
+        c = e + c;
+        d = a;
+        e = e + 1;
+        System.out.println(a + " " + b + " " + c + " " + d + " " + e);
+    }
+}

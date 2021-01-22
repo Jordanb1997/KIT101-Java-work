@@ -1,0 +1,35 @@
+Jordan Bannister 
+
+Variable:
+
+Turtle Painter, the painter object
+
+steps:
+
+move(50)
+turn(90)
+move(45)
+turn(90)
+move(50)
+turn(180)
+move(50)
+turn(90)
+move(45)
+turn(90)
+move(50)
+turn(90)
+move(90)
+turn(180)
+move(90)
+
+turn(90)
+move(60)
+turn(180)
+move(30)
+turn(270)
+move(90)
+turn(270)
+move(30)
+turn(270)
+move(30)
+

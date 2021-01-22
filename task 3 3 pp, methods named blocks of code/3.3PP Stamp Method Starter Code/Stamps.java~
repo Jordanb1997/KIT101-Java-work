@@ -1,0 +1,82 @@
+import java.awt.Color;
+import kit101.turtle.Turtle;
+
+/**
+ * 3.3PP Stamp Method: Implements a reusable 'stamp' that can draw the
+ * author's initials at any location on the Turtle Graphics window.
+ * 
+ *  
+ * 
+ * @author Jordan Bannister
+ */
+public class Stamps {
+
+    /*
+     * stamps method 
+     * generates the authors initials
+     * parameter x,y are the center of the monogram
+     * parameter Color is the ink colour of the drawing 
+     */
+    public static void drawStamp(Turtle stamper, double x, double y, Color ink){
+       
+        Color oldInk; //the original ink colour
+        double oldDirection; //the original direction the turtle faces
+        double oldX, oldY; //the original x and y coordinates of the turtle
+        
+        //collection initial values at method call
+        oldInk = stamper.getColor();
+        oldDirection = stamper.getDirection();
+        oldX = stamper.getX();
+        oldY = stamper.getY();
+        
+        //paint monogram; remembering to use stamper.penUp() to move without drawing a line...
+        stamper.setColor(ink);
+        //setting starting position
+        stamper.penUp();
+        stamper.moveTo(x + 60, y + 0);
+        stamper.penDown();
+        //starting with B
+        stamper.move(50);
+        stamper.turn(90);
+        stamper.move(45);
+        stamper.turn(90);
+        stamper.move(50);
+        stamper.turn(180); 
+        stamper.move(50);
+        stamper.turn(90);
+        stamper.move(45);
+        stamper.turn(90);
+        stamper.move(50);
+        stamper.turn(90);
+        stamper.move(90);
+        stamper.turn(180);
+        stamper.move(90);
+        //J
+        stamper.turn(90);
+        stamper.move(60);
+        stamper.turn(180);
+        stamper.move(30);
+        stamper.turn(270);
+        stamper.move(90);
+        stamper.turn(270);
+        stamper.move(30);
+        stamper.turn(270);
+        stamper.move(30);
+        
+        //resetting parameters
+        stamper.penUp();
+        stamper.moveTo(oldX,oldY);
+        stamper.turnTo(oldDirection);
+    }
+    
+    public static void main(String[] args) {
+        Turtle t = new Turtle(); //the graphics device
+
+        //You will call your method (eventually several times) here
+        drawStamp(t, 200, 200, Color.blue);
+        drawStamp(t, 100, 100, Color.green);
+        drawStamp(t, 300, 250, Color.red);
+        drawStamp(t, 400, 100, Color.cyan);
+        
+    }
+}

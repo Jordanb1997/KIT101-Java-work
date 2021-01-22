@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class highScores{
+    
+    //method(s) for reading and validating
+    //user input and creating a new DataType
+    public static void readGameScore(Scanner sc){
+        String username;
+        int gameid;
+        int score;
+        
+        username = sc.next();
+        gameid = sc.nextInt();
+        score = sc.nextInt();
+        
+        //gameScore gs = new gameScore(username,gameid,score);
+        
+        return gs = new gameScore(username, gameid, score);
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        //gameScore gs;
+        
+        System.out.println("-enter score data-");
+        
+         System.out.println(readGameScore(sc));
+        
+        
+        
+//        gameScore g = new gameScore("dgdr",5346456,45645);
+//        System.out.print(g);
+        
+        
+        //displays data using println
+        
+    }
+}
